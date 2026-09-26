@@ -3,6 +3,7 @@
 **Goal:** Cyber security degree apprenticeship (UK), blue team: SOC analyst, then detection/security engineer.
 **A-levels:** Maths, Further Maths, Physics (Year 12 in 2026/27).
 **Apply:** Oct 2027 – Mar 2028 (Year 13), for a Sept 2028 start.
+**Live tracker:** https://claude.ai/artifact/CHrgU5USNB7HWVjwKcXkiz
 **Plan:** Certs employers recognise + a home SOC lab + write-ups on GitHub that show I can actually do the work.
 
 ---
@@ -10,7 +11,7 @@
 ## Timeline
 | When | Focus |
 |---|---|
-| Oct–Dec 2026 | Wireshark, Pre Security, Bandit, ISC2 CC exam, GitHub live |
+| Oct–Dec 2026 | Wireshark, Pre Security, Bandit, Springpod, GitHub live |
 | Jan–Apr 2027 | TryHackMe SOC Level 1, home lab, first 3 write-ups, Python project |
 | Apr–Aug 2027 | CyberFirst summer course, work experience / insight days, more write-ups, Security+ if affordable |
 | Sep 2027 → | Polish CV/GitHub/LinkedIn, apply to degree apprenticeships |
@@ -19,7 +20,7 @@
 - [ ] **Step 1:** Install Wireshark, capture and explain my own traffic (DNS, TCP handshake, HTTPS). Notes → `notes/networking.md`
 - [ ] **Step 2:** Create a TryHackMe account and finish **Pre Security** (free)
 - [ ] **Step 3:** OverTheWire **Bandit** levels 0–15 (Linux command line)
-- [ ] **Step 4:** **ISC2 Certified in Cybersecurity (CC)**. Free training course; check the ISC2 site for whether the exam is currently free.
+- [ ] **Step 4:** Springpod cyber virtual work experience (free, certificate). ISC2 CC's free exam ended on 20 May 2026, so it's been dropped.
 - [ ] **Step 5:** Put this repo on GitHub with a clean profile README
 
 ## Phase 2: Blue team core + home lab (weeks 7–16)

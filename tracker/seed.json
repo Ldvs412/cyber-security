@@ -1,0 +1,648 @@
+[
+ {
+  "op": "set",
+  "path": "steps/s01",
+  "data": {
+   "order": 1,
+   "phase": 1,
+   "title": "First Wireshark capture",
+   "when": "Oct 2026",
+   "sortDate": "2026-10",
+   "time": "1 hr",
+   "cost": "Free",
+   "what": "Install Wireshark (macOS Arm), run ChmodBPF, capture Wi-Fi while visiting example.com. Filter dns, tcp.flags.syn==1, tls.handshake.type==1. Answer the 3 questions in notes/networking.md.",
+   "why": "Every attack you'll ever detect moves over a network. Knowing what normal DNS, TCP and HTTPS look like is how analysts spot the abnormal.",
+   "link": "https://www.wireshark.org/download.html",
+   "status": "todo"
+  }
+ },
+ {
+  "op": "set",
+  "path": "steps/s02",
+  "data": {
+   "order": 2,
+   "phase": 1,
+   "title": "TryHackMe: Pre Security path",
+   "when": "Oct\u2013Nov 2026",
+   "sortDate": "2026-10",
+   "time": "~30\u201340 hrs",
+   "cost": "Free",
+   "what": "Make a TryHackMe account. Do the Pre Security path in order: Intro to Cyber, Network Fundamentals, How the Web Works, Linux Fundamentals, Windows Fundamentals.",
+   "why": "Structured basics of networks, web, Linux and Windows. Gives you a completion certificate and the vocabulary for interviews.",
+   "link": "https://tryhackme.com/path/outline/presecurity",
+   "status": "todo"
+  }
+ },
+ {
+  "op": "set",
+  "path": "steps/s03",
+  "data": {
+   "order": 3,
+   "phase": 1,
+   "title": "OverTheWire Bandit, levels 0\u201315",
+   "when": "Nov 2026",
+   "sortDate": "2026-11",
+   "time": "~10 hrs",
+   "cost": "Free",
+   "what": "SSH into the Bandit server and clear levels 0\u201315. Log what command solved each level in notes/linux.md.",
+   "why": "Security tools and servers run on Linux. SOC analysts live in the command line, and this is the fastest way to get fluent.",
+   "link": "https://overthewire.org/wargames/bandit/",
+   "status": "todo"
+  }
+ },
+ {
+  "op": "set",
+  "path": "steps/s04",
+  "data": {
+   "order": 4,
+   "phase": 1,
+   "title": "Put the portfolio on GitHub",
+   "when": "Nov 2026",
+   "sortDate": "2026-11",
+   "time": "2 hrs",
+   "cost": "Free",
+   "what": "Create or clean up your GitHub account, push the cyber-security repo, and add a profile README saying what you're learning.",
+   "why": "This is the place employers actually see your work. Every later step adds evidence here.",
+   "link": "https://github.com",
+   "status": "todo"
+  }
+ },
+ {
+  "op": "set",
+  "path": "steps/s05",
+  "data": {
+   "order": 5,
+   "phase": 1,
+   "title": "Springpod cyber virtual work experience",
+   "when": "Nov\u2013Dec 2026",
+   "sortDate": "2026-11",
+   "time": "~10 hrs",
+   "cost": "Free",
+   "what": "Search Springpod for a cyber programme (e.g. Leonardo Cyber & Security) and complete it within its 2-week window.",
+   "why": "Your first work-experience line for applications, plus a certificate. Can be done from home around school.",
+   "link": "https://www.springpod.com/virtual-work-experience/search",
+   "status": "todo"
+  }
+ },
+ {
+  "op": "set",
+  "path": "steps/s06",
+  "data": {
+   "order": 6,
+   "phase": 1,
+   "title": "LinkedIn profile",
+   "when": "Dec 2026",
+   "sortDate": "2026-12",
+   "time": "1 hr",
+   "cost": "Free",
+   "what": "Make a simple profile: A-levels, the cyber things you've done, and links to GitHub and certificates. Follow the employers on the Opportunities tab.",
+   "why": "Recruiters check it. Following employers also means you see scheme openings early.",
+   "link": "https://www.linkedin.com",
+   "status": "todo"
+  }
+ },
+ {
+  "op": "set",
+  "path": "steps/s07",
+  "data": {
+   "order": 7,
+   "phase": 2,
+   "title": "TryHackMe: Cyber Security 101 path",
+   "when": "Jan\u2013Feb 2027",
+   "sortDate": "2027-01",
+   "time": "~40 hrs",
+   "cost": "~\u00a310\u201314/month premium",
+   "what": "Upgrade to premium for a few months. Work through networking, Nmap, Wireshark, cryptography, Burp Suite and the defensive security rooms.",
+   "why": "Moves you from basics to the actual tools used at work. It's also the base for SOC Level 1.",
+   "link": "https://tryhackme.com/path/outline/cybersecurity101",
+   "status": "todo"
+  }
+ },
+ {
+  "op": "set",
+  "path": "steps/s08",
+  "data": {
+   "order": 8,
+   "phase": 2,
+   "title": "Apply for Year 12 work experience",
+   "when": "Jan\u2013Apr 2027",
+   "sortDate": "2027-01",
+   "time": "2\u20134 hrs",
+   "cost": "Free",
+   "what": "Use the Opportunities tab: Uptree, Deloitte Career Shapers, HSBC, Leonardo, EY Foundation. Also ask your sixth form careers lead.",
+   "why": "In-person work experience gives you real 'tell me about a time\u2026' answers for apprenticeship interviews.",
+   "link": "https://uptree.co",
+   "status": "todo"
+  }
+ },
+ {
+  "op": "set",
+  "path": "steps/s09",
+  "data": {
+   "order": 9,
+   "phase": 2,
+   "title": "Apply for the CyberFirst / TechFirst summer course",
+   "when": "Watch from Jan 2027",
+   "sortDate": "2027-01",
+   "time": "2 hrs",
+   "cost": "Free",
+   "what": "CyberFirst is becoming TechFirst from Sept 2026, so check both names. Watch for the Year 12 summer course and apply the day it opens.",
+   "why": "Run by part of GCHQ (the NCSC). One of the strongest things a Year 12 can put on a cyber application.",
+   "link": "https://www.gov.uk/guidance/techfirst",
+   "status": "todo"
+  }
+ },
+ {
+  "op": "set",
+  "path": "steps/s10",
+  "data": {
+   "order": 10,
+   "phase": 2,
+   "title": "Build the home SOC lab",
+   "when": "Feb half-term 2027",
+   "sortDate": "2027-02",
+   "time": "~8 hrs",
+   "cost": "Free",
+   "what": "Install UTM. Create an Ubuntu Server VM running Wazuh, plus a victim VM with the Wazuh agent. Write down every step in lab/README.md.",
+   "why": "This is your 'box'. It's real blue-team work, and building it proves skills that a course certificate can't.",
+   "link": "https://mac.getutm.app",
+   "status": "todo"
+  }
+ },
+ {
+  "op": "set",
+  "path": "steps/s11",
+  "data": {
+   "order": 11,
+   "phase": 2,
+   "title": "Lab write-up #1: detecting SSH brute force",
+   "when": "Mar 2027",
+   "sortDate": "2027-03",
+   "time": "~4 hrs",
+   "cost": "Free",
+   "what": "Inside the lab only: make repeated failed SSH logins, find the alerts in Wazuh, and write up what happened, how you saw it, and how to stop it.",
+   "why": "A finished investigation you can walk an interviewer through. This is exactly what analysts do.",
+   "link": "",
+   "status": "todo"
+  }
+ },
+ {
+  "op": "set",
+  "path": "steps/s12",
+  "data": {
+   "order": 12,
+   "phase": 2,
+   "title": "picoCTF competition",
+   "when": "Mar 2027",
+   "sortDate": "2027-03",
+   "time": "Varies",
+   "cost": "Free",
+   "what": "Enter picoCTF when it runs (usually in spring). Focus on the forensics and general-skills challenges.",
+   "why": "A competition result on your CV, and good practice at problem-solving under time pressure.",
+   "link": "https://picoctf.org",
+   "status": "todo"
+  }
+ },
+ {
+  "op": "set",
+  "path": "steps/s13",
+  "data": {
+   "order": 13,
+   "phase": 2,
+   "title": "Python project: log analyser",
+   "when": "Easter 2027",
+   "sortDate": "2027-04",
+   "time": "~8 hrs",
+   "cost": "Free",
+   "what": "Write a Python script that reads an auth log, counts failed logins per IP, and flags anything suspicious. Put it on GitHub with a README.",
+   "why": "Shows you can automate analysis. Scripting is what separates engineers from button-pushers, and it's more AI-proof.",
+   "link": "",
+   "status": "todo"
+  }
+ },
+ {
+  "op": "set",
+  "path": "steps/s14",
+  "data": {
+   "order": 14,
+   "phase": 2,
+   "title": "TryHackMe: SOC Level 1 path",
+   "when": "Mar\u2013Jun 2027",
+   "sortDate": "2027-03",
+   "time": "~60 hrs",
+   "cost": "Premium",
+   "what": "Work through phishing analysis, SIEM (Splunk/ELK), Sysmon, network security monitoring and digital forensics. Pause during exams.",
+   "why": "The closest free-ish thing to SOC analyst job training, with a completion certificate.",
+   "link": "https://tryhackme.com/path/outline/soclevel1",
+   "status": "todo"
+  }
+ },
+ {
+  "op": "set",
+  "path": "steps/s15",
+  "data": {
+   "order": 15,
+   "phase": 2,
+   "title": "End-of-Year-12 exams (cyber paused)",
+   "when": "May\u2013Jun 2027",
+   "sortDate": "2027-05",
+   "time": "\u2014",
+   "cost": "\u2014",
+   "what": "Cyber drops to zero. These results usually set the predicted grades on your applications.",
+   "why": "Most apprenticeships filter on predicted grades first (e.g. JPMorgan asks for BBB including Maths).",
+   "link": "",
+   "status": "todo"
+  }
+ },
+ {
+  "op": "set",
+  "path": "steps/s16",
+  "data": {
+   "order": 16,
+   "phase": 3,
+   "title": "Lab write-ups #2 and #3",
+   "when": "Jul\u2013Aug 2027",
+   "sortDate": "2027-07",
+   "time": "~10 hrs",
+   "cost": "Free",
+   "what": "Add Suricata and catch a port scan. Add Sysmon on a Windows VM and catch a suspicious PowerShell command. Write both up.",
+   "why": "Three solid investigations make a real portfolio and give you plenty to talk about at interview.",
+   "link": "",
+   "status": "todo"
+  }
+ },
+ {
+  "op": "set",
+  "path": "steps/s17",
+  "data": {
+   "order": 17,
+   "phase": 3,
+   "title": "First certification: CompTIA Security+",
+   "when": "Summer 2027",
+   "sortDate": "2027-08",
+   "time": "~60 hrs study",
+   "cost": "Exam costs a few hundred pounds",
+   "what": "Study with free Professor Messer videos plus practice tests, then book the exam. If money is tight, skip it: employers usually fund certs once you've started.",
+   "why": "The certification UK cyber job adverts ask for most. It's a strong signal, but not required for apprenticeships.",
+   "link": "https://www.comptia.org/certifications/security",
+   "status": "todo"
+  }
+ },
+ {
+  "op": "set",
+  "path": "steps/s18",
+  "data": {
+   "order": 18,
+   "phase": 4,
+   "title": "Polish CV, GitHub and answers",
+   "when": "Sep 2027",
+   "sortDate": "2027-09",
+   "time": "~6 hrs",
+   "cost": "Free",
+   "what": "Update your CV, pin your best repos, and draft answers to 'Why cyber?' and 'Tell me about a project' using your lab write-ups.",
+   "why": "Makes applications fast and consistent when many open at once.",
+   "link": "",
+   "status": "todo"
+  }
+ },
+ {
+  "op": "set",
+  "path": "steps/s19",
+  "data": {
+   "order": 19,
+   "phase": 4,
+   "title": "Apply to 6\u201310 degree apprenticeships",
+   "when": "Oct 2027 \u2013 Mar 2028",
+   "sortDate": "2027-10",
+   "time": "Ongoing",
+   "cost": "Free",
+   "what": "Apply the week each scheme opens (use the Opportunities tab). Many close early once they have enough candidates.",
+   "why": "This is the goal: a paid job plus a free degree, starting Sept 2028.",
+   "link": "https://www.findapprenticeship.service.gov.uk",
+   "status": "todo"
+  }
+ },
+ {
+  "op": "set",
+  "path": "steps/s20",
+  "data": {
+   "order": 20,
+   "phase": 4,
+   "title": "Online tests and assessment centres",
+   "when": "Nov 2027 \u2013 Apr 2028",
+   "sortDate": "2027-11",
+   "time": "Ongoing",
+   "cost": "Free",
+   "what": "Practise numerical and situational judgement tests. Prepare to explain your lab work out loud in 2 minutes.",
+   "why": "The final filter. People who can clearly explain things they've actually built get the offers.",
+   "link": "",
+   "status": "todo"
+  }
+ },
+ {
+  "op": "set",
+  "path": "opps/o01",
+  "data": {
+   "order": 1,
+   "name": "Virtual work experience (cyber)",
+   "org": "Springpod",
+   "type": "Work experience",
+   "location": "Online",
+   "who": "Year 12 (free)",
+   "when": "Rolling \u2014 programmes open through the year",
+   "confidence": "Confirmed running",
+   "action": "Sign up now and do a cyber one this term (step 5).",
+   "link": "https://www.springpod.com/virtual-work-experience/search",
+   "status": "Watching",
+   "notes": ""
+  }
+ },
+ {
+  "op": "set",
+  "path": "opps/o02",
+  "data": {
+   "order": 2,
+   "name": "CyberFirst Advanced (becoming TechFirst)",
+   "org": "NCSC / QinetiQ",
+   "type": "Summer course",
+   "location": "UK venues (2026 ran at 11 sites, late July)",
+   "who": "Year 12, aged 16\u201317, UK national or 5 yrs UK residence",
+   "when": "2027 dates not published yet; expect spring applications",
+   "confidence": "Ran summer 2026; 2027 unconfirmed",
+   "action": "Ask your careers lead to flag it. Check the TechFirst page monthly from Jan 2027.",
+   "link": "https://www.gov.uk/guidance/techfirst",
+   "status": "Watching",
+   "notes": ""
+  }
+ },
+ {
+  "op": "set",
+  "path": "opps/o03",
+  "data": {
+   "order": 3,
+   "name": "Year 12 work experience listings",
+   "org": "Uptree",
+   "type": "Work experience",
+   "location": "London offices + virtual",
+   "who": "Years 10\u201313 (varies by programme)",
+   "when": "Rolling",
+   "confidence": "Platform confirmed; check each listing",
+   "action": "Create an account and filter for technology/cyber in London.",
+   "link": "https://uptree.co",
+   "status": "Watching",
+   "notes": ""
+  }
+ },
+ {
+  "op": "set",
+  "path": "opps/o04",
+  "data": {
+   "order": 4,
+   "name": "Career Shapers",
+   "org": "Deloitte",
+   "type": "Insight programme",
+   "location": "Virtual + London office",
+   "who": "Years 9\u201312 (some strands targeted)",
+   "when": "Usually opens in autumn/winter",
+   "confidence": "Ran in previous years",
+   "action": "Check eligibility for each strand and apply for a technology one if offered.",
+   "link": "https://www.deloitte.com/uk/en/about/press-room/over-1000-school-students-to-benefit-from-deloitte-work-insight-programme.html",
+   "status": "Watching",
+   "notes": ""
+  }
+ },
+ {
+  "op": "set",
+  "path": "opps/o05",
+  "data": {
+   "order": 5,
+   "name": "UK Work Experience Programme",
+   "org": "HSBC",
+   "type": "Work experience",
+   "location": "3 days virtual + 2 days in office",
+   "who": "Years 10\u201312",
+   "when": "Check the site",
+   "confidence": "Reported by third-party guides; check",
+   "action": "Check whether a Year 12 intake is open.",
+   "link": "https://www.hsbc.com/careers/students-and-graduates/student-opportunities/uk-work-experience-programme",
+   "status": "Watching",
+   "notes": ""
+  }
+ },
+ {
+  "op": "set",
+  "path": "opps/o06",
+  "data": {
+   "order": 6,
+   "name": "Smart Futures (paid work experience)",
+   "org": "EY Foundation",
+   "type": "Work experience",
+   "location": "London + other cities",
+   "who": "Year 12 (eligibility criteria apply)",
+   "when": "Usually opens early in the year",
+   "confidence": "Ran in previous years",
+   "action": "Check if you meet the eligibility criteria. It's paid, which is rare.",
+   "link": "https://eyfoundation.com",
+   "status": "Watching",
+   "notes": ""
+  }
+ },
+ {
+  "op": "set",
+  "path": "opps/o07",
+  "data": {
+   "order": 7,
+   "name": "STEM work experience",
+   "org": "Leonardo UK",
+   "type": "Work experience",
+   "location": "Basildon, Essex (in person)",
+   "who": "Years 10\u201312, STEM interest",
+   "when": "Check the site",
+   "confidence": "Confirmed on Leonardo careers site",
+   "action": "Leonardo is a defence/cyber employer. Apply if you can get to Basildon.",
+   "link": "https://careers.uk.leonardo.com/gb/en/early-careers/placements/work-experience",
+   "status": "Watching",
+   "notes": ""
+  }
+ },
+ {
+  "op": "set",
+  "path": "opps/o08",
+  "data": {
+   "order": 8,
+   "name": "Technology Degree Apprenticeship",
+   "org": "JPMorganChase",
+   "type": "Degree apprenticeship",
+   "location": "Cyber track in Bournemouth; London = software/data",
+   "who": "BBB incl. Maths; GCSE English 5+, Maths 6+",
+   "when": "Opens ~autumn for the following Sept",
+   "confidence": "Confirmed on JPMorgan site",
+   "action": "Target for autumn 2027. Note the cyber track is Bournemouth-based.",
+   "link": "https://www.jpmorganchase.com/careers/explore-opportunities/programs/technology-degree-apprenticeship",
+   "status": "Watching",
+   "notes": ""
+  }
+ },
+ {
+  "op": "set",
+  "path": "opps/o09",
+  "data": {
+   "order": 9,
+   "name": "Cyber Security Degree Apprenticeship",
+   "org": "GCHQ",
+   "type": "Degree apprenticeship",
+   "location": "Cheltenham, London + others (check)",
+   "who": "School leavers; UK national; security clearance",
+   "when": "Check the careers site",
+   "confidence": "Scheme exists; 2028-start dates TBC",
+   "action": "Top target. Clearance means being honest and keeping a clean online record.",
+   "link": "https://www.gchq-careers.co.uk",
+   "status": "Watching",
+   "notes": ""
+  }
+ },
+ {
+  "op": "set",
+  "path": "opps/o10",
+  "data": {
+   "order": 10,
+   "name": "School leaver / technology schemes",
+   "org": "MI5",
+   "type": "Degree apprenticeship",
+   "location": "London",
+   "who": "School leavers; UK national; clearance",
+   "when": "Check the careers site",
+   "confidence": "Scheme page exists",
+   "action": "Check for technology/cyber school-leaver roles in autumn 2027.",
+   "link": "https://www.mi5.gov.uk/careers/opportunities/school-leavers",
+   "status": "Watching",
+   "notes": ""
+  }
+ },
+ {
+  "op": "set",
+  "path": "opps/o11",
+  "data": {
+   "order": 11,
+   "name": "Cyber Security degree apprenticeship",
+   "org": "BT",
+   "type": "Degree apprenticeship",
+   "location": "Various UK incl. London",
+   "who": "A-levels (check requirements)",
+   "when": "Usually opens autumn",
+   "confidence": "Scheme exists",
+   "action": "Register on BT's early careers site for alerts.",
+   "link": "https://jobs.bt.com",
+   "status": "Watching",
+   "notes": ""
+  }
+ },
+ {
+  "op": "set",
+  "path": "opps/o12",
+  "data": {
+   "order": 12,
+   "name": "Degree apprenticeships (cyber)",
+   "org": "BAE Systems Digital Intelligence",
+   "type": "Degree apprenticeship",
+   "location": "Guildford HQ + others",
+   "who": "A-levels (check requirements)",
+   "when": "Check the careers site",
+   "confidence": "Scheme exists",
+   "action": "Guildford is commutable from London. Look for cyber/security roles in autumn 2027.",
+   "link": "https://careers.baesystems.com/locations/uk/apprentices/degree",
+   "status": "Watching",
+   "notes": ""
+  }
+ },
+ {
+  "op": "set",
+  "path": "opps/o13",
+  "data": {
+   "order": 13,
+   "name": "Cyber Security apprenticeship",
+   "org": "Lloyds Banking Group",
+   "type": "Degree apprenticeship",
+   "location": "Various",
+   "who": "Levels 2\u20136",
+   "when": "Recruitment window currently paused",
+   "confidence": "Paused; register interest",
+   "action": "Register interest now so you're alerted when it reopens.",
+   "link": "https://uk.prosple.com/graduate-employers/lloyds-banking-group/jobs-internships/cyber-security-technologist-apprentice",
+   "status": "Watching",
+   "notes": ""
+  }
+ },
+ {
+  "op": "set",
+  "path": "opps/o14",
+  "data": {
+   "order": 14,
+   "name": "Technology Cyber & Security Apprenticeship",
+   "org": "Barclays",
+   "type": "Degree apprenticeship",
+   "location": "2026 intake was Knutsford (check for London)",
+   "who": "A-levels for degree level",
+   "when": "Check the site",
+   "confidence": "Scheme ran for 2026",
+   "action": "Check locations for the 2028 intake.",
+   "link": "https://search.jobs.barclays/apprenticeship-programmes",
+   "status": "Watching",
+   "notes": ""
+  }
+ },
+ {
+  "op": "set",
+  "path": "opps/o15",
+  "data": {
+   "order": 15,
+   "name": "BrightStart (Cyber)",
+   "org": "Deloitte",
+   "type": "Degree apprenticeship",
+   "location": "London + other offices",
+   "who": "A-levels (check UCAS points)",
+   "when": "Usually opens autumn",
+   "confidence": "Scheme exists",
+   "action": "Consultancy route: you'd work on cyber for clients.",
+   "link": "https://www.deloitte.com/uk/en/careers.html",
+   "status": "Watching",
+   "notes": ""
+  }
+ },
+ {
+  "op": "set",
+  "path": "opps/o16",
+  "data": {
+   "order": 16,
+   "name": "Find an Apprenticeship (gov.uk search)",
+   "org": "GOV.UK",
+   "type": "Search tool",
+   "location": "England-wide",
+   "who": "Everyone",
+   "when": "Always open",
+   "confidence": "Official service",
+   "action": "In autumn 2027, search 'cyber' at Level 6 and save alerts.",
+   "link": "https://www.findapprenticeship.service.gov.uk",
+   "status": "Watching",
+   "notes": ""
+  }
+ },
+ {
+  "op": "set",
+  "path": "opps/o17",
+  "data": {
+   "order": 17,
+   "name": "picoCTF",
+   "org": "Carnegie Mellon University",
+   "type": "Competition",
+   "location": "Online",
+   "who": "Free, school students welcome",
+   "when": "Usually spring",
+   "confidence": "Runs annually",
+   "action": "Enter in spring 2027 (step 12).",
+   "link": "https://picoctf.org",
+   "status": "Watching",
+   "notes": ""
+  }
+ }
+]

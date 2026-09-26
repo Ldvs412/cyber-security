@@ -1,0 +1,252 @@
+<title>Blue Team Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ground:#EDF1F5; --surface:#FFFFFF; --surface-2:#F5F8FB; --ink:#122033; --muted:#566779;
+  --line:#D6DEE7; --accent:#1D5FD1; --accent-soft:#E3ECFB;
+  --done:#23794A; --done-soft:#E1F2E8; --doing:#A76300; --doing-soft:#FBEFD9; --due:#B3261E;
+  --display:"IBM Plex Sans Condensed","Arial Narrow",system-ui,sans-serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  color-scheme:dark;
+  --ground:#0E141B; --surface:#151E28; --surface-2:#1A2531; --ink:#E3E9F0; --muted:#95A4B4;
+  --line:#26333F; --accent:#76A7F2; --accent-soft:#1B2B44;
+  --done:#5CC08A; --done-soft:#16301F; --doing:#E7A64A; --doing-soft:#33260F; --due:#F08A80;
+}}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --ground:#0E141B; --surface:#151E28; --surface-2:#1A2531; --ink:#E3E9F0; --muted:#95A4B4;
+  --line:#26333F; --accent:#76A7F2; --accent-soft:#1B2B44;
+  --done:#5CC08A; --done-soft:#16301F; --doing:#E7A64A; --doing-soft:#33260F; --due:#F08A80;
+}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font:15px/1.55 var(--body);margin:0}
+.wrap{max-width:920px;margin:0 auto;padding-inline:16px;padding-block:28px 64px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0}
+h1{font-size:34px;font-weight:600;letter-spacing:-.01em;line-height:1.1}
+.sub{color:var(--muted);margin:6px 0 0;max-width:62ch}
+.mono{font-family:var(--mono);font-size:12.5px;letter-spacing:.02em}
+a{color:var(--accent)}
+button,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+.summary{display:grid;grid-template-columns:1fr 1.4fr;gap:16px;margin-top:22px}
+@media (max-width:640px){.summary{grid-template-columns:1fr}}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px}
+.label{font-family:var(--mono);font-size:11.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.big{font-family:var(--display);font-size:30px;font-weight:600;font-variant-numeric:tabular-nums}
+.bar{height:8px;background:var(--surface-2);border:1px solid var(--line);border-radius:99px;overflow:hidden;margin-top:10px}
+.bar>i{display:block;height:100%;background:var(--done);width:0;transition:width .4s}
+.next h3{font-size:19px;margin-top:4px}
+.next p{margin:6px 0 0;color:var(--muted)}
+
+.tabs{display:flex;gap:4px;margin-top:26px;border-bottom:1px solid var(--line)}
+.tab{background:none;border:0;padding:10px 14px;cursor:pointer;font-weight:600;color:var(--muted);border-bottom:2px solid transparent;margin-bottom:-1px}
+.tab[aria-selected="true"]{color:var(--ink);border-color:var(--accent)}
+
+.phase{margin-top:26px}
+.phase-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:10px}
+.phase-head h2{font-size:21px;font-weight:600}
+.list{background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.step{border-top:1px solid var(--line)}
+.step:first-child{border-top:0}
+.row{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:12px 14px}
+.stat{width:30px;height:30px;border-radius:50%;border:2px solid var(--line);background:var(--surface);cursor:pointer;display:grid;place-items:center;flex:none}
+.stat svg{width:16px;height:16px}
+.step[data-s="doing"] .stat{border-color:var(--doing);background:var(--doing-soft)}
+.step[data-s="done"] .stat{border-color:var(--done);background:var(--done)}
+.step[data-s="done"] .t{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--line)}
+.toggle{background:none;border:0;text-align:left;cursor:pointer;padding:0;min-width:0}
+.t{font-weight:600;display:block}
+.meta{color:var(--muted);font-size:13px}
+.when{font-family:var(--mono);font-size:12px;white-space:nowrap;padding:3px 8px;border-radius:6px;background:var(--surface-2);border:1px solid var(--line);color:var(--muted)}
+.when.due{color:var(--due);border-color:currentColor;background:transparent}
+.when.now{color:var(--accent);border-color:currentColor;background:var(--accent-soft)}
+.detail{padding:0 14px 16px 56px;display:grid;gap:10px}
+@media (max-width:520px){.detail{padding-left:14px}.row{grid-template-columns:auto 1fr}.row .when{grid-column:2;justify-self:start}}
+.detail p{margin:0;max-width:66ch}
+.detail b{font-family:var(--mono);font-size:11.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:500;display:block;margin-bottom:2px}
+.why{border-left:3px solid var(--accent);padding-left:10px}
+
+.filters{display:flex;gap:6px;flex-wrap:wrap;margin-top:20px}
+.chip{border:1px solid var(--line);background:var(--surface);border-radius:99px;padding:5px 12px;cursor:pointer;font-size:13.5px}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--ground);border-color:var(--ink)}
+.opps{display:grid;gap:12px;margin-top:16px}
+.opp{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:grid;gap:10px}
+.opp-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;flex-wrap:wrap}
+.opp h3{font-size:18px;font-weight:600}
+.org{color:var(--muted);font-size:13.5px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px 16px;margin:0}
+.facts div{min-width:0}
+.facts dt{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.facts dd{margin:0;font-size:14px}
+.conf{font-family:var(--mono);font-size:12px;padding:3px 8px;border-radius:6px;white-space:nowrap}
+.conf.ok{background:var(--done-soft);color:var(--done)}
+.conf.check{background:var(--doing-soft);color:var(--doing)}
+.act{background:var(--surface-2);border-radius:8px;padding:8px 10px;font-size:14px}
+.opp-ctl{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+select{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:5px 8px}
+textarea{width:100%;background:var(--surface-2);border:1px solid var(--line);border-radius:6px;padding:8px;min-height:38px;resize:vertical;font-size:14px}
+.pill{font-family:var(--mono);font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--accent)}
+.state{margin-top:24px;padding:16px;border:1px dashed var(--line);border-radius:10px;color:var(--muted)}
+.foot{margin-top:28px;color:var(--muted);font-size:13px}
+@media (prefers-reduced-motion:reduce){.bar>i{transition:none}}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="label">Year 12 → degree apprenticeship · Sept 2028 start</div>
+    <h1>Blue Team Plan</h1>
+    <p class="sub">Every step to a cyber security degree apprenticeship (SOC analyst → security engineer): what to do, why it helps, and when. Tick the circle to move a step from to do → in progress → done.</p>
+  </header>
+
+  <section class="summary" aria-label="Progress">
+    <div class="panel">
+      <div class="label">Progress</div>
+      <div class="big" id="pct">–</div>
+      <div class="meta" id="pctText">Loading…</div>
+      <div class="bar"><i id="barFill"></i></div>
+    </div>
+    <div class="panel next">
+      <div class="label">Up next</div>
+      <h3 id="nextTitle">–</h3>
+      <p id="nextWhy"></p>
+    </div>
+  </section>
+
+  <div class="tabs" role="tablist">
+    <button class="tab" role="tab" id="tab-plan" aria-selected="true" data-tab="plan">Cyber plan</button>
+    <button class="tab" role="tab" id="tab-opps" aria-selected="false" data-tab="opps">Opportunities</button>
+  </div>
+
+  <main>
+    <section id="view-plan"></section>
+    <section id="view-opps" hidden>
+      <div class="filters" id="filters"></div>
+      <div class="opps" id="oppList"></div>
+      <p class="foot">Checked 26 Sep 2026. "Confirmed" means the scheme's own page or a recent report shows it running. Dates marked TBC haven't been published yet, so check the link before relying on them.</p>
+    </section>
+    <div class="state" id="state" hidden></div>
+  </main>
+</div>
+
+<script>
+const PHASES={1:["Foundations","Oct – Dec 2026"],2:["Blue team core","Jan – Jun 2027"],3:["Summer build","Jul – Aug 2027"],4:["Apply","Sep 2027 – Apr 2028"]};
+const NEXT={todo:"doing",doing:"done",done:"todo"};
+const LABEL={todo:"To do",doing:"In progress",done:"Done"};
+const OPP_STATUS=["Watching","Registered interest","Applied","Interview","Offer","Rejected","Not for me"];
+const now=new Date(); const NOWKEY=now.getFullYear()+"-"+String(now.getMonth()+1).padStart(2,"0");
+let steps=[],opps=[],db=null,open=new Set(),filter="All",readOnly=false;
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+try{const t=localStorage.getItem("bt-tab"); if(t) setTab(t);}catch(e){}
+document.querySelectorAll(".tab").forEach(b=>b.addEventListener("click",()=>setTab(b.dataset.tab)));
+function setTab(t){
+  document.querySelectorAll(".tab").forEach(b=>b.setAttribute("aria-selected",b.dataset.tab===t));
+  $("view-plan").hidden=t!=="plan"; $("view-opps").hidden=t!=="opps";
+  try{localStorage.setItem("bt-tab",t)}catch(e){}
+}
+
+const ICON={doing:'<svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="3.5" fill="var(--doing)"/></svg>',
+ done:'<svg viewBox="0 0 16 16"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="var(--surface)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>',todo:""};
+
+function renderPlan(){
+  const done=steps.filter(s=>s.status==="done").length;
+  const pct=steps.length?Math.round(done/steps.length*100):0;
+  $("pct").textContent=pct+"%"; $("pctText").textContent=`${done} of ${steps.length} steps done`;
+  $("barFill").style.width=pct+"%";
+  const nx=steps.find(s=>s.status==="doing")||steps.find(s=>s.status==="todo");
+  $("nextTitle").textContent=nx?nx.title:"Everything's done";
+  $("nextWhy").textContent=nx?`${nx.when} · ${nx.time}. ${nx.why}`:"";
+  let html="";
+  for(const p of [1,2,3,4]){
+    const ps=steps.filter(s=>s.phase===p); if(!ps.length) continue;
+    const pd=ps.filter(s=>s.status==="done").length;
+    html+=`<div class="phase"><div class="phase-head"><h2>${PHASES[p][0]}</h2><span class="mono" style="color:var(--muted)">${PHASES[p][1]} · ${pd}/${ps.length}</span></div><div class="list">`;
+    for(const s of ps){
+      const isOpen=open.has(s.id);
+      const cls=s.status!=="done"?(s.sortDate<NOWKEY?"due":s.sortDate===NOWKEY?"now":""):"";
+      html+=`<div class="step" data-s="${s.status}">
+        <div class="row">
+          <button class="stat" data-id="${s.id}" aria-label="${esc(s.title)}: ${LABEL[s.status]}. Change status" ${readOnly?"disabled":""}>${ICON[s.status]}</button>
+          <button class="toggle" data-open="${s.id}" aria-expanded="${isOpen}"><span class="t">${esc(s.title)}</span><span class="meta">${esc(s.time)} · ${esc(s.cost)}${s.status==="doing"?" · <span style='color:var(--doing)'>In progress</span>":""}</span></button>
+          <span class="when ${cls}" title="${cls==="due"?"Past its target month":cls==="now"?"Target is this month":"Target"}">${esc(s.when)}</span>
+        </div>
+        ${isOpen?`<div class="detail"><div><b>What to do</b><p>${esc(s.what)}</p></div><div class="why"><b>How it helps</b><p>${esc(s.why)}</p></div>${s.link?`<p><a href="${esc(s.link)}" target="_blank" rel="noopener">${esc(s.link.replace(/^https?:\/\//,"").replace(/\/$/,""))} ↗</a></p>`:""}</div>`:""}
+      </div>`;
+    }
+    html+=`</div></div>`;
+  }
+  $("view-plan").innerHTML=html;
+}
+
+$("view-plan").addEventListener("click",async e=>{
+  const t=e.target.closest("[data-open]");
+  if(t){const id=t.dataset.open; open.has(id)?open.delete(id):open.add(id); renderPlan(); return;}
+  const b=e.target.closest(".stat"); if(!b||!db||readOnly) return;
+  const s=steps.find(x=>x.id===b.dataset.id); const ns=NEXT[s.status];
+  s.status=ns; renderPlan();
+  try{await db.doc("steps/"+s.id).update({status:ns});}catch(err){handleWriteErr(err)}
+});
+
+function renderOpps(){
+  const types=["All",...new Set(opps.map(o=>o.type))];
+  $("filters").innerHTML=types.map(t=>`<button class="chip" data-f="${esc(t)}" aria-pressed="${t===filter}">${esc(t)}</button>`).join("");
+  const list=opps.filter(o=>filter==="All"||o.type===filter);
+  $("oppList").innerHTML=list.map(o=>{
+    const ok=/^Confirmed|Official|Runs annually|Scheme exists|Scheme page|Scheme ran|Platform/.test(o.confidence);
+    return `<article class="opp">
+      <div class="opp-top"><div><div class="pill">${esc(o.type)}</div><h3>${esc(o.name)}</h3><div class="org">${esc(o.org)}</div></div>
+      <span class="conf ${ok?"ok":"check"}">${esc(o.confidence)}</span></div>
+      <dl class="facts"><div><dt>Where</dt><dd>${esc(o.location)}</dd></div><div><dt>Who</dt><dd>${esc(o.who)}</dd></div><div><dt>When</dt><dd>${esc(o.when)}</dd></div></dl>
+      <div class="act"><b>Do:</b> ${esc(o.action)}</div>
+      <div class="opp-ctl">
+        <label class="meta" for="st-${o.id}">Status</label>
+        <select id="st-${o.id}" data-st="${o.id}" ${readOnly?"disabled":""}>${OPP_STATUS.map(s=>`<option ${s===o.status?"selected":""}>${s}</option>`).join("")}</select>
+        <a href="${esc(o.link)}" target="_blank" rel="noopener">Open site ↗</a>
+      </div>
+      <textarea id="nt-${o.id}" data-nt="${o.id}" placeholder="Notes: deadlines, login, who you spoke to…" ${readOnly?"disabled":""}>${esc(o.notes)}</textarea>
+    </article>`}).join("");
+}
+$("filters").addEventListener("click",e=>{const c=e.target.closest("[data-f]"); if(c){filter=c.dataset.f; renderOpps();}});
+$("oppList").addEventListener("change",async e=>{
+  const s=e.target.closest("[data-st]"); if(!s||!db) return;
+  const o=opps.find(x=>x.id===s.dataset.st); o.status=s.value;
+  try{await db.doc("opps/"+o.id).update({status:s.value});}catch(err){handleWriteErr(err)}
+});
+$("oppList").addEventListener("focusout",async e=>{
+  const n=e.target.closest("[data-nt]"); if(!n||!db) return;
+  const o=opps.find(x=>x.id===n.dataset.nt); if(o.notes===n.value) return;
+  o.notes=n.value;
+  try{await db.doc("opps/"+o.id).update({notes:n.value});}catch(err){handleWriteErr(err)}
+});
+
+function handleWriteErr(err){
+  if(err&&err.code==="invalid_argument"){readOnly=true; showState("You can view this tracker but not change it."); renderPlan(); renderOpps();}
+  else showState("Couldn't save that change. Try again in a moment.");
+}
+function showState(msg){$("state").textContent=msg; $("state").hidden=!msg;}
+
+let editingNote=false;
+document.addEventListener("focusin",e=>{editingNote=!!e.target.closest("[data-nt]")});
+document.addEventListener("focusout",()=>{editingNote=false});
+
+(async()=>{
+  db=await (window.claude?.use?.("db")??null);
+  if(!db){$("pctText").textContent="Tracker data unavailable here"; showState("Open this page on claude.ai to load your tracker."); return;}
+  db.collection("steps").orderBy("order").onSnapshot(snap=>{
+    steps=snap.docs.map(d=>({id:d.id,...d.data()})); renderPlan();
+    if(!steps.length) showState("No steps yet.");
+    else if($("state").textContent==="No steps yet.") showState("");
+  },()=>showState("Lost connection to the tracker. Reload the page."));
+  db.collection("opps").orderBy("order").onSnapshot(snap=>{
+    opps=snap.docs.map(d=>({id:d.id,...d.data()}));
+    if(!editingNote) renderOpps();
+  },()=>showState("Lost connection to the tracker. Reload the page."));
+})();
+</script>
