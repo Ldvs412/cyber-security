@@ -1,10 +1,19 @@
 # Blue Team Cyber Security — Portfolio
 
 **Goal:** Cyber security degree apprenticeship (UK), blue team: SOC analyst, then detection/security engineer.
-**A-levels:** Maths, Further Maths, Physics.
+**A-levels:** Maths, Further Maths, Physics (Year 12 in 2026/27).
+**Apply:** Oct 2027 – Mar 2028 (Year 13), for a Sept 2028 start.
 **Plan:** Certs employers recognise + a home SOC lab + write-ups on GitHub that show I can actually do the work.
 
 ---
+
+## Timeline
+| When | Focus |
+|---|---|
+| Oct–Dec 2026 | Wireshark, Pre Security, Bandit, ISC2 CC exam, GitHub live |
+| Jan–Apr 2027 | TryHackMe SOC Level 1, home lab, first 3 write-ups, Python project |
+| Apr–Aug 2027 | CyberFirst summer course, work experience / insight days, more write-ups, Security+ if affordable |
+| Sep 2027 → | Polish CV/GitHub/LinkedIn, apply to degree apprenticeships |
 
 ## Phase 1: Foundations + first cert (weeks 1–6)
 - [ ] **Step 1:** Install Wireshark, capture and explain my own traffic (DNS, TCP handshake, HTTPS). Notes → `notes/networking.md`
