@@ -1,0 +1,9 @@
+# Big VM files and secrets never go to GitHub
+lab/isos/
+lab/vms/
+*.iso
+*.qcow2
+*.img
+lab/secrets/
+.DS_Store
+lab/seed/
