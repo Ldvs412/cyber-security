@@ -37,6 +37,16 @@ All VMs sit on UTM's private shared network `192.168.64.0/24`. Attacks never lea
 | Date | Step | Evidence |
 |---|---|---|
 | 2026-10-12 | Planned the lab, installed UTM, downloaded and checksum-verified the Ubuntu 24.04.5 and Kali 2026.2 ARM64 installers | this README |
+| 2026-10-12 | Wrote cloud-init autoinstall configs for the Ubuntu VMs and created the `wazuh` VM. First install failed, fixed it (see below) | `watch-install.sh` |
+
+## Problems I hit
+
+**First Ubuntu install failed at "installing kernel".** I read the installer logs over the VM's serial console
+(`/var/log/installer/curtin-install.log`) and found `linux-modules-extra-6.8.0-147-generic` was "not installable".
+Checking with `apt-cache policy` showed the ARM64 build of that package just wasn't on the mirror yet, even though
+the meta-package already pointed to it. I switched the autoinstall to the slimmer `linux-image-virtual-hwe-24.04`
+kernel and the `ubuntu-server-minimal` source, which avoids the missing package and also keeps the VM disk smaller.
+Lesson: read the logs before changing things.
 
 ## Detections (write-ups)
 

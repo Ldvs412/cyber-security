@@ -1,54 +1,61 @@
-# Blue Team Cyber Security — Portfolio
+# cyber-security
 
-**Goal:** Cyber security degree apprenticeship (UK), blue team: SOC analyst, then detection/security engineer.
-**A-levels:** Maths, Further Maths, Physics (Year 12 in 2026/27).
-**Apply:** Oct 2027 – Mar 2028 (Year 13), for a Sept 2028 start.
-**Live tracker:** https://claude.ai/artifact/CHrgU5USNB7HWVjwKcXkiz
-**Plan:** Certs employers recognise + a home SOC lab + write-ups on GitHub that show I can actually do the work.
+Hi, I'm Luan. I'm a Year 12 student in the UK (A-levels in Maths, Further Maths and Physics) working towards a
+**cyber security degree apprenticeship**, on the blue team side: SOC analyst first, then detection engineering.
 
----
+This repo is where I keep my roadmap, my home lab and my write-ups, so there's a record of what I've actually done
+and what I learned doing it.
 
-## Timeline
+## What's in here
+
+| Folder | What it is |
+|---|---|
+| [`lab/`](lab/) | My home SOC lab: a Wazuh SIEM, a victim server and a Kali attacker, all running as VMs on my MacBook |
+| [`writeups/`](writeups/) | Write-ups of lab detections and practice rooms (no flags) |
+| [`notes/`](notes/) | Notes on networking and Linux as I learn them |
+| [`tracker/`](tracker/) | A small page I use to track the roadmap below |
+
+## Roadmap
+
+**Timeline:** I'm in Year 12 now (2026/27). Applications open around Oct 2027 to Mar 2028, for a September 2028 start.
+
 | When | Focus |
 |---|---|
-| Oct–Dec 2026 | Wireshark, Pre Security, Bandit, Springpod, GitHub live |
-| Jan–Apr 2027 | TryHackMe SOC Level 1, home lab, first 3 write-ups, Python project |
-| Apr–Aug 2027 | CyberFirst summer course, work experience / insight days, more write-ups, Security+ if affordable |
-| Sep 2027 → | Polish CV/GitHub/LinkedIn, apply to degree apprenticeships |
+| Oct to Dec 2026 | Home lab, Wireshark, TryHackMe Pre Security, OverTheWire Bandit, Springpod |
+| Jan to Apr 2027 | TryHackMe SOC Level 1, first 3 lab write-ups, a Python project |
+| Apr to Aug 2027 | CyberFirst, work experience and insight days, more write-ups, Security+ if I can afford it |
+| Sep 2027 onwards | Tidy up my CV, GitHub and LinkedIn, then apply |
 
-## Phase 1: Foundations + first cert (weeks 1–6)
-- [ ] **Step 1:** Install Wireshark, capture and explain my own traffic (DNS, TCP handshake, HTTPS). Notes → `notes/networking.md`
-- [ ] **Step 2:** Create a TryHackMe account and finish **Pre Security** (free)
-- [ ] **Step 3:** OverTheWire **Bandit** levels 0–15 (Linux command line)
-- [ ] **Step 4:** Springpod cyber virtual work experience (free, certificate). ISC2 CC's free exam ended on 20 May 2026, so it's been dropped.
-- [ ] **Step 5:** Put this repo on GitHub with a clean profile README
+### Foundations
+- [ ] Capture and explain my own traffic in Wireshark (DNS, the TCP handshake, HTTPS)
+- [ ] TryHackMe Pre Security path
+- [ ] OverTheWire Bandit, levels 0 to 15
+- [ ] Springpod cyber security virtual work experience
 
-## Phase 2: Blue team core + home lab (weeks 7–16)
-- [ ] TryHackMe **Cyber Security 101**, then **SOC Level 1** path
-- [ ] **Home SOC lab** on my Mac (M5, 16 GB) using UTM virtual machines. See `lab/` once built.
-  - Ubuntu Server VM running **Wazuh** (free SIEM + endpoint detection)
-  - A Windows or Linux "victim" VM with the Wazuh agent (+ **Sysmon** on Windows)
-  - A Kali VM to generate attacks *inside the lab only*
-  - **Suricata**/**Zeek** for network detection, Wireshark for packet analysis
-  - Deliverable: 3–5 write-ups, e.g. "Detecting SSH brute force", "Spotting a port scan", "Catching a malicious PowerShell command"
-- [ ] **Blue Team Labs Online** (free tier) investigations
-- [ ] **Microsoft SC-900** (cheap, cloud security basics; Microsoft sometimes runs free-voucher events)
+### Blue team core
+- [ ] **Home SOC lab** (in progress, see [`lab/`](lab/))
+- [ ] TryHackMe Cyber Security 101, then SOC Level 1
+- [ ] Blue Team Labs Online investigations
+- [ ] Microsoft SC-900
 
-## Phase 3: Stand out (months 5–12)
-- [ ] **CompTIA Security+** (the cert UK job adverts ask for most; the exam costs a few hundred pounds, so plan it)
-- [ ] Python projects: log parser that flags suspicious logins, phishing email analyser, simple detection rules (Sigma)
-- [ ] Competitions: **CyberFirst** (NCSC), **Cyber Security Challenge UK**, picoCTF
-- [ ] Apply for degree apprenticeships (most UK schemes open ~Oct–Mar for a September start)
+### Later
+- [ ] CompTIA Security+
+- [ ] Python tools: a log parser that flags suspicious logins, a phishing email checker
+- [ ] Competitions: CyberFirst, Cyber Security Challenge UK, picoCTF
 
-## Why this direction
-Entry-level alert triage is the part of blue team work most likely to be automated by AI.
-The safer, better-paid roles build and run the defences: detection engineering, incident response,
-cloud security and security engineering. The lab + Python + Security+ route is aimed at those.
+## Why blue team
 
-## Rules
-Only test systems I own or that a platform explicitly lets me attack (THM, BTLO, OTW, picoCTF, my own lab).
+I like the idea of being the person who works out what actually happened. Entry-level alert triage is likely to be
+automated more and more, so I'm aiming at the skills behind it: building detections, investigating incidents and
+understanding the systems underneath.
+
+## Rules I stick to
+
+I only attack machines I own inside my own lab, or platforms that say it's allowed (TryHackMe, OverTheWire, picoCTF).
 
 ## Log
-| Date | What I did | Time |
-|------|-----------|------|
-| 2026-09-26 | Set up roadmap | – |
+
+| Date | What I did |
+|---|---|
+| 2026-09-26 | Wrote the roadmap |
+| 2026-10-12 | Started the home SOC lab: UTM, unattended Ubuntu installs, first VM |
