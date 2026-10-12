@@ -1,0 +1,13 @@
+# Lab SSH shortcuts. Use: ssh -F ~/Claude/cyber-security/lab/ssh_config wazuh
+Host wazuh
+  HostName 192.168.64.10
+Host victim
+  HostName 192.168.64.20
+Host kali
+  HostName 192.168.64.30
+Host wazuh victim kali
+  User analyst
+  IdentityFile ~/Claude/cyber-security/lab/secrets/lab_ed25519
+  IdentitiesOnly yes
+  StrictHostKeyChecking accept-new
+  UserKnownHostsFile ~/Claude/cyber-security/lab/secrets/known_hosts
