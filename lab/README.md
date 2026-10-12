@@ -38,7 +38,8 @@ All VMs sit on UTM's private shared network `192.168.64.0/24`. Attacks never lea
 |---|---|---|
 | 2026-10-12 | Planned the lab, installed UTM, downloaded and checksum-verified the Ubuntu 24.04.5 and Kali 2026.2 ARM64 installers | this README |
 | 2026-10-12 | Wrote cloud-init autoinstall configs for the Ubuntu VMs and created the `wazuh` VM. First install failed, fixed it (see below) | `watch-install.sh` |
-| 2026-10-13 | Ejected the installer, removed the 4 GB swap file (Wazuh recommends no swap for the indexer), installed Wazuh 4.14 all-in-one. Dashboard up at https://192.168.64.10 | dashboard screenshot (to add) |
+| 2026-10-13 | Ejected the installer, removed the 4 GB swap file (Wazuh recommends no swap for the indexer), installed Wazuh 4.14 all-in-one. Dashboard up at https://192.168.64.10 | [screenshot](screenshots/01-wazuh-dashboard.png) |
+| 2026-10-13 | Built the `victim` VM the same way, removed its swap and enrolled it in Wazuh with the 4.14.8 agent. Agent shows as Active | `finish-victim.sh` |
 
 ## Problems I hit
 
