@@ -49,6 +49,12 @@ I like the idea of being the person who works out what actually happened. Entry-
 automated more and more, so I'm aiming at the skills behind it: building detections, investigating incidents and
 understanding the systems underneath.
 
+## How I built this
+
+I used Claude (an AI assistant) as a tutor while building the lab. It helped me with the instructions and the
+logic behind each step, wrote the setup scripts with me, and helped me structure this repo. The testing,
+detections and write-ups are my own work, and I've written up what I learned in each part.
+
 ## Rules I stick to
 
 I only attack machines I own inside my own lab, or platforms that say it's allowed (TryHackMe, OverTheWire, picoCTF).
