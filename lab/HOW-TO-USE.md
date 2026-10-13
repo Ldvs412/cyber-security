@@ -40,7 +40,23 @@ Click an alert to see every detail (rule ID, level, time, user, file).
 
 `/etc` is watched in **real time**, so file alerts show up within seconds. Other folders are only checked every 12 hours.
 
-## 5. Questions to answer in each write-up
+## 5. Seeing it clearly in the dashboard
+
+| Page | Shows |
+|---|---|
+| **Threat Hunting** | Everything: files, users, sudo, logins, installs |
+| **File Integrity Monitoring** | Only file changes |
+| **Configuration Assessment** | The security settings checklist (CIS) |
+| **Agents → victim** | Connection status, system info, installed software |
+
+- **Time:** calendar icon → *Last 15 minutes* while testing. Missing alerts are usually a time-range problem.
+- **Refresh:** ↻ after every test.
+- **Columns:** add `rule.id`, `rule.level` and `rule.description` so each row is readable at a glance.
+- **Searches:** `rule.id : 5902` (new user), `rule.id : 5402` (sudo), `rule.level >= 7` (serious only),
+  `syscheck.path : "/etc/my-test.txt"` (one file).
+- **Open an alert** (magnifying glass) and read `full_log`, `rule.mitre` and, for file changes, `syscheck.diff`.
+
+## 6. Questions to answer in each write-up
 
 1. What did I do, and when?
 2. Which alert(s) fired? Rule ID, level, description.
@@ -48,6 +64,6 @@ Click an alert to see every detail (rule ID, level, time, user, file).
 4. Why would a SOC analyst care? What would it mean if an attacker did this?
 5. What would I check next?
 
-## 6. Shut down
+## 7. Shut down
 
 In UTM: click each VM → ■ stop → **Request power down**. Do victim first, then wazuh.
