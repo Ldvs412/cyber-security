@@ -65,3 +65,4 @@ I only attack machines I own inside my own lab, or platforms that say it's allow
 |---|---|
 | 2026-09-26 | Wrote the roadmap |
 | 2026-10-12 | Started the home SOC lab: UTM, unattended Ubuntu installs, first VM |
+| 2026-10-13 | Got Wazuh and the victim running, set up real-time file monitoring, wrote my first custom rule and ran my first detection tests ([lab log](lab/README.md#build-log)) |
