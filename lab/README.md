@@ -42,6 +42,16 @@ All VMs sit on UTM's private shared network `192.168.64.0/24`. Attacks never lea
 | 2026-10-13 | Built the `victim` VM the same way, removed its swap and enrolled it in Wazuh with the 4.14.8 agent. Agent shows as Active | `finish-victim.sh` |
 | 2026-10-13 | Switched `/etc` on the victim to real-time file integrity monitoring (default is a scan every 12 h) and checked file, user, sudo and package events all reach Wazuh | [how to use the lab](HOW-TO-USE.md) |
 | 2026-10-13 | Wrote my first custom Wazuh rule (100100, level 12): any change under `/etc/sudoers*` is flagged as possible privilege escalation (MITRE T1548.003) | [`wazuh-rules/local_rules.xml`](wazuh-rules/local_rules.xml) |
+| 2026-10-13 | Ran my first detection tests on the victim: file added/changed/deleted in `/etc`, user created and deleted, packages installed, `sudo` use, a failed SSH login for a non-existent user, a scheduled task in `/etc/cron.d`, and my sudoers rule at level 12. Found and read every alert in Threat Hunting and FIM | [screenshots](#screenshots) |
+
+## Screenshots
+
+| | |
+|---|---|
+| ![Wazuh dashboard](screenshots/01-wazuh-dashboard.png) Wazuh dashboard after install | ![Victim agent](screenshots/02-victim-agent.png) Victim agent connected and active |
+| ![High severity alerts](screenshots/03-custom-rule-high-alerts.png) My custom rule firing at level 12 | ![New user alert](screenshots/04-new-user-alert.png) "New user added" alerts (rule 5902) |
+| ![FIM dashboard](screenshots/05-fim-dashboard.png) File integrity dashboard for the victim | ![FIM events](screenshots/06-fim-user-creation-files.png) The `/etc` files Linux changed when I created a user |
+| ![Terminal and overview](screenshots/07-terminal-and-high-severity.png) My commands on the victim, and the overview showing 4 high alerts | |
 
 ## Problems I hit
 
