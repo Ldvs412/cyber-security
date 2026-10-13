@@ -1,0 +1,14 @@
+<!-- Luan's custom detection rules -->
+<group name="local,syscheck,">
+
+  <!-- Any change to sudo's permission files = possible privilege escalation -->
+  <rule id="100100" level="12">
+    <if_sid>550,553,554</if_sid>
+    <field name="file">^/etc/sudoers</field>
+    <description>Sudo permissions file changed ($(file)): possible privilege escalation</description>
+    <mitre>
+      <id>T1548.003</id>
+    </mitre>
+  </rule>
+
+</group>
